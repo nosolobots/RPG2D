@@ -1,8 +1,12 @@
+using System.ComponentModel.Design;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] float moveSpeed;
+
     Rigidbody2D rb;
     Animator anim;
     SpriteRenderer sr;
@@ -13,6 +17,8 @@ public class PlayerController : MonoBehaviour
     void Awake()
     {
         _controls = new PlayerControls();
+        _controls.Player.Attack.performed += context => Attack(context);
+
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
@@ -52,4 +58,32 @@ public class PlayerController : MonoBehaviour
         sr.flipX = !_lookingRight;
     }
 
+    void Attack(InputAction.CallbackContext context)
+    {
+        if (!context.performed) return;
+
+        anim.SetTrigger("attack");
+
+        CheckForEnemies();
+    }
+
+    void CheckForEnemies()
+    {
+        Ray ray = new Ray(new Vector3(transform.position.x, transform.position.y, 0f), 
+                            new Vector3(_lookingRight ? 1 : -1, _movement.y, 0f));
+
+        //Debug.DrawRay(ray.origin, 1 * ray.direction, Color.red, 0.5f, false);
+
+        int layerMask = LayerMask.GetMask("Enemies");
+        RaycastHit2D[] hitEnemies = Physics2D.GetRayIntersectionAll(ray, 2f, layerMask);
+
+        foreach (RaycastHit2D enemy in hitEnemies)
+        {
+            Debug.Log("Enemy hit: " + enemy.collider.gameObject.name);
+            if (enemy.collider != null)
+            {
+                Destroy(enemy.collider.gameObject);
+            }
+        }
+    }
 }
