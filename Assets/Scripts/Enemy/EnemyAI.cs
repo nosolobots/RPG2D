@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
-    EnemyPathfiding enemyPathfiding;
+    EnemyPathfinding enemyPathfiding;
     State _state;
 
     enum State
@@ -13,7 +13,7 @@ public class EnemyAI : MonoBehaviour
 
     void Awake()
     {
-        enemyPathfiding = GetComponent<EnemyPathfiding>();
+        enemyPathfiding = GetComponent<EnemyPathfinding>();
 
         _state = State.Roaming;
     }
@@ -27,14 +27,14 @@ public class EnemyAI : MonoBehaviour
     {
         while (_state == State.Roaming)
         {
-            Vector2 randomRoamingPosition = GetRoamingPosition();
-            enemyPathfiding.MoveTo(randomRoamingPosition);
+            Vector2 randomRoamingDirection = GetRoamingDirection();
+            enemyPathfiding.MoveTo(randomRoamingDirection);
 
             yield return new WaitForSeconds(2f);
         }
     }
 
-    Vector2 GetRoamingPosition()
+    Vector2 GetRoamingDirection()
     {
         return new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
     }

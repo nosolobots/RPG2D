@@ -1,5 +1,3 @@
-using System.ComponentModel.Design;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -69,13 +67,20 @@ public class PlayerController : MonoBehaviour
 
     void CheckForEnemies()
     {
-        Ray ray = new Ray(new Vector3(transform.position.x, transform.position.y, 0f), 
-                            new Vector3(_lookingRight ? 1 : -1, _movement.y, 0f));
+        //Ray ray = new Ray(new Vector3(transform.position.x, transform.position.y, transform.position.z), 
+        //                  new Vector3(_lookingRight ? 1 : -1, _movement.y, transform.position.z));
 
-        //Debug.DrawRay(ray.origin, 1 * ray.direction, Color.red, 0.5f, false);
+        Ray ray = new Ray(transform.position, _lookingRight ? Vector3.right : -Vector3.right); 
 
-        int layerMask = LayerMask.GetMask("Enemies");
-        RaycastHit2D[] hitEnemies = Physics2D.GetRayIntersectionAll(ray, 2f, layerMask);
+        Debug.DrawRay(ray.origin, 1 * ray.direction, Color.red, 0.5f, false);
+
+        // crea un layerMask para que el raycast incluya todos los objetos de la escena
+        LayerMask layerMask = 0;
+        
+        /*
+        RaycastHit2D[] hitEnemies = Physics2D.GetRayIntersectionAll(ray);
+        
+        Debug.Log("Enemies hit: " + hitEnemies.Length);
 
         foreach (RaycastHit2D enemy in hitEnemies)
         {
@@ -84,6 +89,23 @@ public class PlayerController : MonoBehaviour
             {
                 Destroy(enemy.collider.gameObject);
             }
+        }
+        */
+        layerMask = LayerMask.GetMask("Enemies");
+        Vector3 attackDirection = new Vector3(_lookingRight ? 1 : -1, _movement.y, 0).normalized;
+        float attackDistance = 1f;
+
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, attackDirection, attackDistance, layerMask);
+        if (hit)
+        {
+            GameObject enemy = hit.collider.gameObject;
+            Debug.Log("Enemy hit: " + enemy.name);
+            //Destroy(enemy);
+            //Rigidbody2D enemyRb = enemy.GetComponent<Rigidbody2D>();
+            //Vector2 pushDirection = new Vector2(attackDirection.x, attackDirection.y);
+            //enemyRb.AddForce(enemy.transform.right, ForceMode2D.Impulse);
+            //enemyRb.MovePosition(enemyRb.position + pushDirection * 100f);
+            enemy.GetComponent<EnemyDamage>().Hit(new Vector2(attackDirection.x, attackDirection.y));
         }
     }
 }

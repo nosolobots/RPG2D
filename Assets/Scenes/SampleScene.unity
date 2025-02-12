@@ -793,7 +793,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &619394801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1749,6 +1749,18 @@ PrefabInstance:
     - target: {fileID: 1252651223142779868, guid: dc313f4a2b714112a847483bc3f7c96a, type: 3}
       propertyPath: m_Name
       value: Orc
+      objectReference: {fileID: 0}
+    - target: {fileID: 6477147078261964472, guid: dc313f4a2b714112a847483bc3f7c96a, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6477147078261964472, guid: dc313f4a2b714112a847483bc3f7c96a, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6477147078261964472, guid: dc313f4a2b714112a847483bc3f7c96a, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7036029985764612453, guid: dc313f4a2b714112a847483bc3f7c96a, type: 3}
       propertyPath: m_LocalPosition.x

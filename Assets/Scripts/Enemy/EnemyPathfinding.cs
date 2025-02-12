@@ -1,7 +1,7 @@
+using System.Collections;
 using UnityEngine;
-using UnityEngine.Scripting.APIUpdating;
 
-public class EnemyPathfiding : MonoBehaviour
+public class EnemyPathfinding : MonoBehaviour
 {
     [SerializeField] float moveSpeed;
     Rigidbody2D rb;
@@ -27,4 +27,6 @@ public class EnemyPathfiding : MonoBehaviour
     {
         _moveDirection = target;
     }
+
+
 }
