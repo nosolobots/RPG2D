@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     SpriteRenderer sr;
     PlayerControls _controls;
     Vector2 _movement;
-    bool _lookingRight = true;
+    public bool _lookingRight {get; private set;} = true;
 
     void Awake()
     {
