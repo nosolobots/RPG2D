@@ -1163,6 +1163,7 @@ GameObject:
   - component: {fileID: 1112144908}
   - component: {fileID: 1112144909}
   - component: {fileID: 1112144911}
+  - component: {fileID: 1112144912}
   - component: {fileID: 1112144910}
   m_Layer: 3
   m_Name: WeaponCollider
@@ -1309,6 +1310,18 @@ PolygonCollider2D:
       - {x: -0.58342, y: -0.5441954}
       - {x: -0.9613847, y: -0.3971357}
   m_UseDelaunayMesh: 0
+--- !u!114 &1112144912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1112144907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ba1542734d5d2a9a8095918188c7517, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1118659733 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2387968622415550319, guid: 1b8c762b513a1b30ca543de72048c127, type: 3}

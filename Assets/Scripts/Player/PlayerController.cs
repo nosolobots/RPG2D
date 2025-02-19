@@ -10,7 +10,8 @@ public class PlayerController : MonoBehaviour
     SpriteRenderer sr;
     PlayerControls _controls;
     Vector2 _movement;
-    public bool _lookingRight {get; private set;} = true;
+    public bool IsLookingRight {get; private set;} = true;
+    public bool IsAttacking {get; private set;} = false;
 
     void Awake()
     {
@@ -47,13 +48,13 @@ public class PlayerController : MonoBehaviour
         _movement = _controls.Player.Move.ReadValue<Vector2>();
         anim.SetFloat("moveX", _movement.x);
         anim.SetFloat("moveY", _movement.y);
-        if (_movement.x != 0) _lookingRight = _movement.x > 0;
+        if (_movement.x != 0) IsLookingRight = _movement.x > 0;
     }
 
     void Move()
     {
         rb.MovePosition(rb.position + _movement.normalized * moveSpeed * Time.fixedDeltaTime);
-        sr.flipX = !_lookingRight;
+        sr.flipX = !IsLookingRight;
     }
 
     void Attack(InputAction.CallbackContext context)
@@ -62,7 +63,17 @@ public class PlayerController : MonoBehaviour
 
         anim.SetTrigger("attack");
 
-        CheckForEnemies();
+        //CheckForEnemies();
+    }
+
+    void OnAttackStart()
+    {
+        IsAttacking = true;
+    }
+
+    void OnAttackEnd()
+    {
+        IsAttacking = false;
     }
 
     void CheckForEnemies()
@@ -70,7 +81,7 @@ public class PlayerController : MonoBehaviour
         //Ray ray = new Ray(new Vector3(transform.position.x, transform.position.y, transform.position.z), 
         //                  new Vector3(_lookingRight ? 1 : -1, _movement.y, transform.position.z));
 
-        Ray ray = new Ray(transform.position, _lookingRight ? Vector3.right : -Vector3.right); 
+        Ray ray = new Ray(transform.position, IsLookingRight ? Vector3.right : -Vector3.right); 
 
         Debug.DrawRay(ray.origin, 1 * ray.direction, Color.red, 0.5f, false);
 
@@ -92,7 +103,7 @@ public class PlayerController : MonoBehaviour
         }
         */
         layerMask = LayerMask.GetMask("Enemies");
-        Vector3 attackDirection = new Vector3(_lookingRight ? 1 : -1, _movement.y, 0).normalized;
+        Vector3 attackDirection = new Vector3(IsLookingRight ? 1 : -1, _movement.y, 0).normalized;
         float attackDistance = 1f;
 
         RaycastHit2D hit = Physics2D.Raycast(transform.position, attackDirection, attackDistance, layerMask);
