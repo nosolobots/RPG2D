@@ -3,10 +3,19 @@ using UnityEngine;
 
 public class EnemyDamage : MonoBehaviour
 {
-    public void Hit(Vector2 hitDirection)
+    [SerializeField] int initialHealth;
+
+    int currentHealth;
+
+    void Start()
     {
-        Debug.Log("Auch!");
-        
+        currentHealth = initialHealth;
+    }
+
+    public void Hit(int damage)
+    {
+        currentHealth -= damage;
+
         StartCoroutine(HitEffect());
     }
 
@@ -18,5 +27,15 @@ public class EnemyDamage : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
 
         material.color = Color.white;
+
+        CheckDeath();
+    }
+
+    void CheckDeath()
+    {
+        if (currentHealth <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }

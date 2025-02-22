@@ -24,13 +24,5 @@ public class WeaponCollider : MonoBehaviour
             weaponColliderLeft.enabled = false;
         }
     }
-
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.GetComponent<EnemyAI>())
-        {
-            Debug.Log("Enemy hit!");
-        }
-    }
 }
 
