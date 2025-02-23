@@ -6,17 +6,15 @@ public class DamageSource : MonoBehaviour
     [SerializeField] float pushForce = 10f;
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<EnemyDamage>())
-        {
-            collision.gameObject.GetComponent<EnemyDamage>().Hit(damage);
-        }
+        // Aplicamos daño al enemigo (si recibe daño)
+        EnemyDamage enemyDamage = collision.gameObject.GetComponent<EnemyDamage>();
+        enemyDamage?.Hit(damage);
 
-        if (collision.gameObject.GetComponent<PushBack>())
-        {
-            collision.gameObject.GetComponent<PushBack>().Push(
-                (collision.transform.position - transform.position).normalized, 
-                pushForce
-            );
-        }
+        // Aplicamos desplazamiento al enemigo (si se mueve)
+        PushBack pushBack = collision.gameObject.GetComponent<PushBack>();
+        pushBack?.Push(
+            (collision.transform.position - transform.position).normalized, 
+            pushForce
+        );
     }
 }

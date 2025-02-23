@@ -1,15 +1,21 @@
+using System.Collections;
+using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("Player Movement")]
     [SerializeField] float moveSpeed;
+    [SerializeField] float dashSpeed;
+    [SerializeField] float dashTime = .2f;
 
     Rigidbody2D rb;
     Animator anim;
     SpriteRenderer sr;
     PlayerControls _controls;
     Vector2 _movement;
+    float _speed;
 
     public bool IsLookingRight {get; private set;} = true;
     public bool IsAttacking {get; private set;} = false;
@@ -17,7 +23,10 @@ public class PlayerController : MonoBehaviour
     void Awake()
     {
         _controls = new PlayerControls();
-        _controls.Player.Attack.performed += context => Attack(context);
+        _controls.Player.Attack.performed += _ => Attack();
+        _controls.Player.Dash.performed += _ => Dash();
+
+        _speed = moveSpeed;
 
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
@@ -54,14 +63,12 @@ public class PlayerController : MonoBehaviour
 
     void Move()
     {
-        rb.MovePosition(rb.position + _movement.normalized * moveSpeed * Time.fixedDeltaTime);
+        rb.MovePosition(rb.position + _movement.normalized * _speed * Time.fixedDeltaTime);
         sr.flipX = !IsLookingRight;
     }
 
-    void Attack(InputAction.CallbackContext context)
+    void Attack()
     {
-        if (!context.performed) return;
-
         anim.SetTrigger("attack");
     }
 
@@ -73,5 +80,19 @@ public class PlayerController : MonoBehaviour
     void OnAttackEnd()
     {
         IsAttacking = false;
+    }
+
+    void Dash()
+    {
+        _speed = dashSpeed;
+        
+        StartCoroutine(DashCooldown());
+    }
+
+    IEnumerator DashCooldown()
+    {
+        yield return new WaitForSeconds(dashTime);
+
+        _speed = moveSpeed;
     }
 }

@@ -4,6 +4,9 @@ using UnityEngine;
 public class EnemyDamage : MonoBehaviour
 {
     [SerializeField] int initialHealth;
+    [SerializeField] float hitTime = 0.1f;
+    [SerializeField] GameObject deathVFX;
+
 
     int currentHealth;
 
@@ -24,7 +27,7 @@ public class EnemyDamage : MonoBehaviour
         Material material = GetComponent<SpriteRenderer>().material;
         material.color = Color.red;
 
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(hitTime);
 
         material.color = Color.white;
 
@@ -35,6 +38,8 @@ public class EnemyDamage : MonoBehaviour
     {
         if (currentHealth <= 0)
         {
+            Instantiate(deathVFX, transform.position, Quaternion.identity);
+            
             Destroy(gameObject);
         }
     }

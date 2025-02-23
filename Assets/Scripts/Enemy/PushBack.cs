@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class PushBack : MonoBehaviour
 {
+    [SerializeField] float pushTime = 0.25f;
+
     Rigidbody2D rb;
     public bool IsPushed {get; private set;} = false;
 
@@ -20,7 +22,7 @@ public class PushBack : MonoBehaviour
 
     IEnumerator StopPush()
     {
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSeconds(pushTime);
         IsPushed = false;
     }
 }
