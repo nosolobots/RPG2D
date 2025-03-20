@@ -85,7 +85,7 @@ public class PlayerController : MonoBehaviour
     void Dash()
     {
         _speed = dashSpeed;
-        
+        Debug.Log("Dash");
         StartCoroutine(DashCooldown());
     }
 
