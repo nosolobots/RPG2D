@@ -6,12 +6,14 @@ public class EnemyDamage : MonoBehaviour
     [SerializeField] int initialHealth;
     [SerializeField] float hitTime = 0.1f;
     [SerializeField] GameObject deathVFX;
-
+    Material material;
 
     int currentHealth;
 
     void Start()
     {
+        material = GetComponent<SpriteRenderer>().material;
+
         currentHealth = initialHealth;
     }
 
@@ -24,7 +26,6 @@ public class EnemyDamage : MonoBehaviour
 
     IEnumerator HitEffect()
     {
-        Material material = GetComponent<SpriteRenderer>().material;
         material.color = Color.red;
 
         yield return new WaitForSeconds(hitTime);

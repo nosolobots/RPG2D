@@ -26,13 +26,14 @@ public class EnemyPathfinding : MonoBehaviour
     {
         if (pushBack.IsPushed) return;
         
-        rb.MovePosition(rb.position + _moveDirection * moveSpeed * Time.fixedDeltaTime);
+        rb.MovePosition(rb.position + 
+            _moveDirection * moveSpeed * Time.fixedDeltaTime);
 
         sr.flipX = _moveDirection.x < 0;
     }
 
-    public void MoveTo(Vector2 target)
+    public void MoveTo(Vector2 targetDir)
     {
-        _moveDirection = target;
+        _moveDirection = targetDir;
     }
 }
