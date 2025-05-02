@@ -7,6 +7,7 @@ public class EnemyPathfinding : MonoBehaviour
     Rigidbody2D rb;
     SpriteRenderer sr;
     PushBack pushBack;
+    Animator anim;
 
     Vector2 _moveDirection;
 
@@ -14,7 +15,13 @@ public class EnemyPathfinding : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
         pushBack = GetComponent<PushBack>();
+    }
+
+    void Update()
+    {
+        SetAnimation();
     }
 
     void FixedUpdate()
@@ -35,5 +42,11 @@ public class EnemyPathfinding : MonoBehaviour
     public void MoveTo(Vector2 targetDir)
     {
         _moveDirection = targetDir;
+    }
+
+    void SetAnimation()
+    {
+        anim.SetFloat("Move", _moveDirection.magnitude);
+        sr.flipX = _moveDirection.x < 0;
     }
 }

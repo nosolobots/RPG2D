@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 5741330237682050450}
   - component: {fileID: 2882587334288417235}
   - component: {fileID: 4160267048589390055}
+  - component: {fileID: 311702381105084360}
   m_Layer: 6
   m_Name: Orc
   m_TagString: Untagged
@@ -33,7 +34,7 @@ Transform:
   m_GameObject: {fileID: 1252651223142779868}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.78, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -84,7 +85,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1366633436, guid: bfdb50640eb1db8f6ac881aeff16b4f5, type: 3}
+  m_Sprite: {fileID: 786137533, guid: 24d87f445905a76fbb2eb7af1dd0bfc7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -133,6 +134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialHealth: 3
+  hitTime: 0.1
   deathVFX: {fileID: 870666960875719401, guid: a571b2190674e993a9b495952068de36, type: 3}
 --- !u!114 &3536036572158718893
 MonoBehaviour:
@@ -146,6 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0562c3ed5bfde6a18a42a530683911bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pushTime: 0.25
 --- !u!70 &5741330237682050450
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -180,8 +183,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.20828784, y: -0.016335428}
-  m_Size: {x: 0.7499902, y: 0.9482515}
+  m_Offset: {x: 0.0434722, y: 0.009139419}
+  m_Size: {x: 0.65713054, y: 0.90437084}
   m_Direction: 0
 --- !u!61 &2882587334288417235
 BoxCollider2D:
@@ -217,17 +220,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.36578798, y: -0.07591891}
+  m_Offset: {x: 0.6114297, y: -0.03784485}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2}
+    oldSize: {x: 4, y: 4}
     newSize: {x: 2, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.7319789, y: 0.44163275}
+  m_Size: {x: 0.66326404, y: 0.40596232}
   m_EdgeRadius: 0
 --- !u!50 &4160267048589390055
 Rigidbody2D:
@@ -256,6 +259,28 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!95 &311702381105084360
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1252651223142779868}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: af951360aa698e3ef9b65a8309dbc4d3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1480872327876901247
 GameObject:
   m_ObjectHideFlags: 0
@@ -282,7 +307,7 @@ Transform:
   m_GameObject: {fileID: 1480872327876901247}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.23, y: -0.43, z: 0}
+  m_LocalPosition: {x: 0, y: -0.43, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
