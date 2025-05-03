@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6380442988062450887}
   - component: {fileID: 709615795500766771}
+  - component: {fileID: 633484657499881171}
   - component: {fileID: 4290497549065795272}
   m_Layer: 0
   m_Name: OW_Bush
@@ -88,6 +89,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!114 &633484657499881171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7852607499445382643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a3e67ff8e228cf408ebc78f5eb19412, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathVFX: {fileID: 8624930842414771556, guid: aa73cc823dd92e0539f38d6a7e723f4c, type: 3}
 --- !u!70 &4290497549065795272
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
