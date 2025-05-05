@@ -6653,7 +6653,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -22709,7 +22709,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &619394801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25295,6 +25295,7 @@ Transform:
   m_Children:
   - {fileID: 1217490608}
   - {fileID: 519420032}
+  - {fileID: 1624340244}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1367926462 stripped
@@ -33912,6 +33913,55 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6380442988062450887, guid: 5e9696029c43a0020bf1f1bc1707a441, type: 3}
   m_PrefabInstance: {fileID: 1437450817}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1624340243
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1624340244}
+  - component: {fileID: 1624340245}
+  m_Layer: 0
+  m_Name: Global Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1624340244
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1624340243}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1337579619}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1624340245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1624340243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: c39913c1e55f19a478a2d119965227e4, type: 2}
 --- !u!1001 &1633257368
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47709,7 +47759,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: 977473338, guid: 4a154e9015af140d8807978b697abc2f, type: 3}
       - {fileID: -1892945010, guid: 4a154e9015af140d8807978b697abc2f, type: 3}
-      m_AnimationSpeed: 3.0000002
+      m_AnimationSpeed: 3
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 17, y: -11, z: 0}
@@ -47736,7 +47786,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: 942660853, guid: 4a154e9015af140d8807978b697abc2f, type: 3}
       - {fileID: 828183899, guid: 4a154e9015af140d8807978b697abc2f, type: 3}
-      m_AnimationSpeed: 3
+      m_AnimationSpeed: 3.0000002
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -22, y: -10, z: 0}
@@ -47871,7 +47921,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: -623181648, guid: 4a154e9015af140d8807978b697abc2f, type: 3}
       - {fileID: -275135048, guid: 4a154e9015af140d8807978b697abc2f, type: 3}
-      m_AnimationSpeed: 3
+      m_AnimationSpeed: 3.0000002
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -17, y: -8, z: 0}
@@ -47916,7 +47966,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: -243658345, guid: 4a154e9015af140d8807978b697abc2f, type: 3}
       - {fileID: -958106701, guid: 4a154e9015af140d8807978b697abc2f, type: 3}
-      m_AnimationSpeed: 3.0000002
+      m_AnimationSpeed: 3
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -18, y: -7, z: 0}
@@ -47961,7 +48011,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: 942660853, guid: 4a154e9015af140d8807978b697abc2f, type: 3}
       - {fileID: 828183899, guid: 4a154e9015af140d8807978b697abc2f, type: 3}
-      m_AnimationSpeed: 3
+      m_AnimationSpeed: 3.0000002
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -21, y: -6, z: 0}
