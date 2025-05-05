@@ -3,8 +3,17 @@ using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : Singleton<PlayerController>
 {
+    // PlayerController is a singleton class that manages player movement and actions.
+    // It uses Unity's new Input System for handling player input.
+    // The class handles player movement, dashing, and attacking.
+    // It also manages the player's animation state and sprite flipping based on movement direction.
+
+    // Serialized fields allow customization of player movement speed and dash speed in the Unity Inspector.
+    // The class uses Rigidbody2D for physics-based movement and Animator for animation control.
+    // The SpriteRenderer is used to flip the player's sprite based on the direction of movement.
+
     [Header("Player Movement")]
     [SerializeField] float moveSpeed;
     [SerializeField] float dashSpeed;
@@ -20,8 +29,11 @@ public class PlayerController : MonoBehaviour
     public bool IsLookingRight {get; private set;} = true;
     public bool IsAttacking {get; private set;} = false;
 
-    void Awake()
+    protected override void Awake()
     {
+        base.Awake();
+
+        // Initialize the PlayerControls input system
         _controls = new PlayerControls();
         _controls.Player.Attack.performed += _ => Attack();
         _controls.Player.Dash.performed += _ => Dash();
@@ -32,15 +44,14 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
     }
-
     void OnEnable()
     {
-        _controls.Enable();
+        _controls?.Enable();
     }
 
     void OnDisable()
     {
-        _controls.Disable();
+        _controls?.Disable();
     }
 
     void Update()
