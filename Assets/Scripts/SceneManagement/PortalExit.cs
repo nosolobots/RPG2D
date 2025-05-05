@@ -1,3 +1,6 @@
+using System.Collections;
+using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class PortalExit : MonoBehaviour
@@ -10,10 +13,20 @@ public class PortalExit : MonoBehaviour
         if (collision.gameObject.GetComponent<PlayerController>())
         {
             // Load the next scene
-            SceneManager.LoadScene(sceneToLoad);           
+            StartCoroutine(LoadScene());
 
             // Set the destination portal name in SceneManagement
             SceneManagement.Instance.SetDestPortalName(destPortalName); 
+
+            // Fade to black
+            UIFade.Instance.FadeToBlack();
+        }
+
+        IEnumerator LoadScene()
+        {
+            // Wait for the fade to complete
+            yield return new WaitForSeconds(UIFade.Instance.FadeDuration);
+            SceneManager.LoadScene(sceneToLoad);
         }
     }
 }
