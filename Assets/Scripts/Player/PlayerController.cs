@@ -96,7 +96,7 @@ public class PlayerController : Singleton<PlayerController>
     void Dash()
     {
         _speed = dashSpeed;
-        Debug.Log("Dash");
+
         StartCoroutine(DashCooldown());
     }
 
