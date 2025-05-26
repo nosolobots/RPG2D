@@ -35,14 +35,16 @@ public class InputManager : Singleton<InputManager>
             // Open the inventory UI
             _controls.Player.Disable(); // Disable player controls when inventory is open
             _controls.Inventory.Enable(); // Enable inventory controls if needed
-            Time.timeScale = 0; // Uncomment if you want to pause the game
+            InventoryManager.Instance.ShowInventory(true); // Show the inventory UI
+            Time.timeScale = 0; // Pause the game
         }
         else
         {
             // Close the inventory UI
             _controls.Player.Enable(); // Re-enable player controls when inventory is closed
             _controls.Inventory.Disable(); // Disable inventory controls
-            Time.timeScale = 1; // Uncomment if you want to resume the game
+            InventoryManager.Instance.ShowInventory(false); // Hide the inventory UI
+            Time.timeScale = 1; // Resume the game
         }
     }
 }

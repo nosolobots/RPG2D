@@ -32,7 +32,10 @@ public class PlayerController : Singleton<PlayerController>
     protected override void Awake()
     {
         base.Awake();
+    }
 
+    void Start()
+    {
         // Initialize the PlayerControls input system
         //_controls = new PlayerControls();
         _controls = InputManager.Instance.Controls;
