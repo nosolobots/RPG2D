@@ -34,27 +34,18 @@ public class PlayerController : Singleton<PlayerController>
         base.Awake();
 
         // Initialize the PlayerControls input system
-        _controls = new PlayerControls();
+        //_controls = new PlayerControls();
+        _controls = InputManager.Instance.Controls;
 
         _controls.Player.Attack.performed += _ => Attack();
         _controls.Player.Dash.performed += _ => Dash();
-        _controls.Player.Inventory.performed += _ => InventoryManager.Instance.ToggleInventory(_controls);
-        _controls.Inventory.Close.performed += _ => InventoryManager.Instance.ToggleInventory(_controls);
+        _controls.Player.Inventory.performed += _ => InputManager.Instance.ToggleInventory();
 
         _speed = moveSpeed;
 
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
-    }
-    void OnEnable()
-    {
-        _controls?.Player.Enable();
-    }
-
-    void OnDisable()
-    {
-        _controls?.Player.Disable();
     }
 
     void Update()
