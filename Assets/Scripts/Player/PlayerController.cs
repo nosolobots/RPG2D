@@ -35,8 +35,11 @@ public class PlayerController : Singleton<PlayerController>
 
         // Initialize the PlayerControls input system
         _controls = new PlayerControls();
+
         _controls.Player.Attack.performed += _ => Attack();
         _controls.Player.Dash.performed += _ => Dash();
+        _controls.Player.Inventory.performed += _ => InventoryManager.Instance.ToggleInventory(_controls);
+        _controls.Inventory.Close.performed += _ => InventoryManager.Instance.ToggleInventory(_controls);
 
         _speed = moveSpeed;
 
@@ -46,12 +49,12 @@ public class PlayerController : Singleton<PlayerController>
     }
     void OnEnable()
     {
-        _controls?.Enable();
+        _controls?.Player.Enable();
     }
 
     void OnDisable()
     {
-        _controls?.Disable();
+        _controls?.Player.Disable();
     }
 
     void Update()
