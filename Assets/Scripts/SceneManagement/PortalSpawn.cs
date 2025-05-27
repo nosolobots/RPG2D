@@ -11,6 +11,12 @@ public class PortalSpawn : MonoBehaviour
             // Set the player's position to the portal's position
             PlayerController.Instance.transform.position = transform.position;
 
+            // Enable player controls
+            InputManager.Instance.Controls.Player.Enable();
+
+            // Enable player sprite
+            PlayerController.Instance.gameObject.SetActive(true);
+
             // Set the player's camera to follow the player
             CameraManager.Instance.SetPlayerCameraFollow();
 

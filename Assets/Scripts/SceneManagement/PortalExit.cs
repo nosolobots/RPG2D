@@ -12,6 +12,12 @@ public class PortalExit : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<PlayerController>())
         {
+            // Disable player controls
+            InputManager.Instance.Controls.Player.Disable();
+
+            // Hide player sprite
+            PlayerController.Instance.gameObject.SetActive(false);
+
             // Load the next scene
             StartCoroutine(LoadScene());
 

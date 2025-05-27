@@ -290,13 +290,22 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             ""id"": ""21c5d23b-618d-44e2-9929-0100b70c207a"",
             ""actions"": [
                 {
-                    ""name"": ""Navigate"",
-                    ""type"": ""Value"",
-                    ""id"": ""c7903b05-cb75-465e-bd2f-7d6b2d77d4ce"",
-                    ""expectedControlType"": ""Vector2"",
+                    ""name"": ""Next"",
+                    ""type"": ""Button"",
+                    ""id"": ""45936a27-6769-4dfe-bb5e-8feb18dc6095"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": true
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Prev"",
+                    ""type"": ""Button"",
+                    ""id"": ""18ba6847-223e-4e19-86bf-1ed87c75db94"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 },
                 {
                     ""name"": ""Select"",
@@ -318,72 +327,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 }
             ],
             ""bindings"": [
-                {
-                    ""name"": ""WASD"",
-                    ""id"": ""bef273c8-e972-4fc2-aa35-ec1aeb207350"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Navigate"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""a483c0b3-318c-4bc5-9cef-250f17c6fd71"",
-                    ""path"": ""<Keyboard>/w"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Navigate"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""08e86540-f9e8-4b40-b327-7c322118d71e"",
-                    ""path"": ""<Keyboard>/s"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Navigate"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""cf5c9025-948d-4947-8478-a75616e21443"",
-                    ""path"": ""<Keyboard>/a"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Navigate"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""5a64fc15-db52-4fc5-bfec-55be49d3bb47"",
-                    ""path"": ""<Keyboard>/d"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Navigate"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""e870c5ff-6841-4594-91b4-748f486eca30"",
-                    ""path"": ""<Gamepad>/dpad"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Navigate"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
                 {
                     ""name"": """",
                     ""id"": ""a0744df2-8be0-4fb0-a7e4-33aee6ae90de"",
@@ -449,6 +392,50 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""Close"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a4b6a696-3b97-41ce-8f15-03bbd2e8e2d7"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Next"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0feaccba-9de9-408f-a128-d4edd2189719"",
+                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Next"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""84ecd374-93da-44ba-891f-6b7de99e7742"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Prev"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""71058234-4832-4dd6-adfa-fcf5dd9a08de"",
+                    ""path"": ""<Gamepad>/dpad/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Prev"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -491,7 +478,8 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_Player_Inventory = m_Player.FindAction("Inventory", throwIfNotFound: true);
         // Inventory
         m_Inventory = asset.FindActionMap("Inventory", throwIfNotFound: true);
-        m_Inventory_Navigate = m_Inventory.FindAction("Navigate", throwIfNotFound: true);
+        m_Inventory_Next = m_Inventory.FindAction("Next", throwIfNotFound: true);
+        m_Inventory_Prev = m_Inventory.FindAction("Prev", throwIfNotFound: true);
         m_Inventory_Select = m_Inventory.FindAction("Select", throwIfNotFound: true);
         m_Inventory_Close = m_Inventory.FindAction("Close", throwIfNotFound: true);
     }
@@ -704,7 +692,8 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     // Inventory
     private readonly InputActionMap m_Inventory;
     private List<IInventoryActions> m_InventoryActionsCallbackInterfaces = new List<IInventoryActions>();
-    private readonly InputAction m_Inventory_Navigate;
+    private readonly InputAction m_Inventory_Next;
+    private readonly InputAction m_Inventory_Prev;
     private readonly InputAction m_Inventory_Select;
     private readonly InputAction m_Inventory_Close;
     /// <summary>
@@ -719,9 +708,13 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         /// </summary>
         public InventoryActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         /// <summary>
-        /// Provides access to the underlying input action "Inventory/Navigate".
+        /// Provides access to the underlying input action "Inventory/Next".
         /// </summary>
-        public InputAction @Navigate => m_Wrapper.m_Inventory_Navigate;
+        public InputAction @Next => m_Wrapper.m_Inventory_Next;
+        /// <summary>
+        /// Provides access to the underlying input action "Inventory/Prev".
+        /// </summary>
+        public InputAction @Prev => m_Wrapper.m_Inventory_Prev;
         /// <summary>
         /// Provides access to the underlying input action "Inventory/Select".
         /// </summary>
@@ -756,9 +749,12 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_InventoryActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_InventoryActionsCallbackInterfaces.Add(instance);
-            @Navigate.started += instance.OnNavigate;
-            @Navigate.performed += instance.OnNavigate;
-            @Navigate.canceled += instance.OnNavigate;
+            @Next.started += instance.OnNext;
+            @Next.performed += instance.OnNext;
+            @Next.canceled += instance.OnNext;
+            @Prev.started += instance.OnPrev;
+            @Prev.performed += instance.OnPrev;
+            @Prev.canceled += instance.OnPrev;
             @Select.started += instance.OnSelect;
             @Select.performed += instance.OnSelect;
             @Select.canceled += instance.OnSelect;
@@ -776,9 +772,12 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         /// <seealso cref="InventoryActions" />
         private void UnregisterCallbacks(IInventoryActions instance)
         {
-            @Navigate.started -= instance.OnNavigate;
-            @Navigate.performed -= instance.OnNavigate;
-            @Navigate.canceled -= instance.OnNavigate;
+            @Next.started -= instance.OnNext;
+            @Next.performed -= instance.OnNext;
+            @Next.canceled -= instance.OnNext;
+            @Prev.started -= instance.OnPrev;
+            @Prev.performed -= instance.OnPrev;
+            @Prev.canceled -= instance.OnPrev;
             @Select.started -= instance.OnSelect;
             @Select.performed -= instance.OnSelect;
             @Select.canceled -= instance.OnSelect;
@@ -888,12 +887,19 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     public interface IInventoryActions
     {
         /// <summary>
-        /// Method invoked when associated input action "Navigate" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "Next" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnNavigate(InputAction.CallbackContext context);
+        void OnNext(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Prev" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnPrev(InputAction.CallbackContext context);
         /// <summary>
         /// Method invoked when associated input action "Select" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
