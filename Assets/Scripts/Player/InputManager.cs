@@ -33,8 +33,6 @@ public class InputManager : Singleton<InputManager>
 
     void OnDisable()
     {
-        Debug.Log("InputManager OnDisable called");
-
         _inventoryState = _controls.Inventory.enabled;
         _controls.Inventory.Disable();
 

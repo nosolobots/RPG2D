@@ -113,10 +113,10 @@ TextureImporter:
       name: Soldier-Walk_0
       rect:
         serializedVersion: 2
-        x: 34
-        y: 34
-        width: 32
-        height: 32
+        x: 18
+        y: 18
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -135,10 +135,10 @@ TextureImporter:
       name: Soldier-Walk_1
       rect:
         serializedVersion: 2
-        x: 134
-        y: 34
-        width: 32
-        height: 32
+        x: 118
+        y: 18
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -157,10 +157,10 @@ TextureImporter:
       name: Soldier-Walk_2
       rect:
         serializedVersion: 2
-        x: 234
-        y: 34
-        width: 32
-        height: 32
+        x: 218
+        y: 18
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,10 +179,10 @@ TextureImporter:
       name: Soldier-Walk_3
       rect:
         serializedVersion: 2
-        x: 334
-        y: 34
-        width: 32
-        height: 32
+        x: 318
+        y: 18
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -201,10 +201,10 @@ TextureImporter:
       name: Soldier-Walk_4
       rect:
         serializedVersion: 2
-        x: 434
-        y: 34
-        width: 32
-        height: 32
+        x: 418
+        y: 18
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -223,10 +223,10 @@ TextureImporter:
       name: Soldier-Walk_5
       rect:
         serializedVersion: 2
-        x: 534
-        y: 34
-        width: 32
-        height: 32
+        x: 518
+        y: 18
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -245,10 +245,10 @@ TextureImporter:
       name: Soldier-Walk_6
       rect:
         serializedVersion: 2
-        x: 634
-        y: 34
-        width: 32
-        height: 32
+        x: 618
+        y: 18
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -267,10 +267,10 @@ TextureImporter:
       name: Soldier-Walk_7
       rect:
         serializedVersion: 2
-        x: 734
-        y: 34
-        width: 32
-        height: 32
+        x: 718
+        y: 18
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

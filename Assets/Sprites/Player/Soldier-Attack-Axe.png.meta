@@ -1,25 +1,7 @@
 fileFormatVersion: 2
-guid: 181a20b6a837b2cfbadcf38a93584db5
+guid: b48443595f0c5d627bef33adbbf5984b
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: -7978735674136817684
-    second: Soldier-Idle_0
-  - first:
-      213: 8849163925938299382
-    second: Soldier-Idle_1
-  - first:
-      213: -3697785639171859907
-    second: Soldier-Idle_2
-  - first:
-      213: -1830650023417107544
-    second: Soldier-Idle_3
-  - first:
-      213: 5344081390441601760
-    second: Soldier-Idle_4
-  - first:
-      213: 1830586431241935133
-    second: Soldier-Idle_5
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -128,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Soldier-Idle_0
+      name: Soldier-Attack-Axe_0
       rect:
         serializedVersion: 2
         x: 18
@@ -141,16 +123,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: cef86527d26d54190800000000000000
-      internalID: -7978735674136817684
+      spriteID: d486f53e93812ebd9bfc318ac819fcb2
+      internalID: -311963751
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Soldier-Idle_1
+      name: Soldier-Attack-Axe_1
       rect:
         serializedVersion: 2
         x: 118
@@ -163,16 +145,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 6f1e0cca4bb8eca70800000000000000
-      internalID: 8849163925938299382
+      spriteID: 8b98ac3382c7228f29c0c7ec0e7a8699
+      internalID: 1592758362
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Soldier-Idle_2
+      name: Soldier-Attack-Axe_2
       rect:
         serializedVersion: 2
         x: 218
@@ -185,16 +167,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: d3ade998d83deacc0800000000000000
-      internalID: -3697785639171859907
+      spriteID: c3a788ef9fa90a5138a109b36bdeb17e
+      internalID: -1386077316
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Soldier-Idle_3
+      name: Soldier-Attack-Axe_3
       rect:
         serializedVersion: 2
         x: 318
@@ -207,16 +189,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 8aba92eb0893896e0800000000000000
-      internalID: -1830650023417107544
+      spriteID: 3f23ffa570c199b45b35660f2166828c
+      internalID: -707723661
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Soldier-Idle_4
+      name: Soldier-Attack-Axe_4
       rect:
         serializedVersion: 2
         x: 418
@@ -229,16 +211,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 0ea1c00e5bdf92a40800000000000000
-      internalID: 5344081390441601760
+      spriteID: e4db3eb611de918ec92f22a2cb911b1a
+      internalID: 1665489735
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Soldier-Idle_5
+      name: Soldier-Attack-Axe_5
       rect:
         serializedVersion: 2
         x: 518
@@ -251,10 +233,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: d1953dc09ac876910800000000000000
-      internalID: 1830586431241935133
+      spriteID: 909cec7d487c890f999771dce75e244e
+      internalID: 925242922
       vertices: []
       indices: 
       edges: []
@@ -263,7 +245,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 6278e05b34fcaa794936915ec7dda6bf
+    spriteID: ccd202dd1f90f634a8b0d321d71185fd
     internalID: 0
     vertices: []
     indices: 
@@ -273,12 +255,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Soldier-Idle_0: -7978735674136817684
-      Soldier-Idle_1: 8849163925938299382
-      Soldier-Idle_2: -3697785639171859907
-      Soldier-Idle_3: -1830650023417107544
-      Soldier-Idle_4: 5344081390441601760
-      Soldier-Idle_5: 1830586431241935133
+      Soldier-Attack-Axe_0: -311963751
+      Soldier-Attack-Axe_1: 1592758362
+      Soldier-Attack-Axe_2: -1386077316
+      Soldier-Attack-Axe_3: -707723661
+      Soldier-Attack-Axe_4: 1665489735
+      Soldier-Attack-Axe_5: 925242922
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
