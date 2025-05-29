@@ -15,7 +15,7 @@ public class PortalSpawn : MonoBehaviour
             InputManager.Instance.Controls.Player.Enable();
 
             // Enable player sprite
-            PlayerController.Instance.gameObject.SetActive(true);
+            PlayerController.Instance.GetComponentInParent<SpriteRenderer>().enabled = true;
 
             // Set the player's camera to follow the player
             CameraManager.Instance.SetPlayerCameraFollow();

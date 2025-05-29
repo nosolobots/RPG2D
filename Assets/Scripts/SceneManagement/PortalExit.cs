@@ -16,7 +16,7 @@ public class PortalExit : MonoBehaviour
             InputManager.Instance.Controls.Player.Disable();
 
             // Hide player sprite
-            PlayerController.Instance.gameObject.SetActive(false);
+            PlayerController.Instance.GetComponentInParent<SpriteRenderer>().enabled = false;
 
             // Load the next scene
             StartCoroutine(LoadScene());
