@@ -21,17 +21,15 @@ public class ItemCollect : MonoBehaviour
             // Mostramos un mensaje de recogida
 
             // Activamos el arma en el jugador
-            ActiveWeapon activeWeapon = other.GetComponent<ActiveWeapon>();
-            if (activeWeapon != null)
+            if (other.TryGetComponent<ActiveWeapon>(out var activeWeapon))
             {
                 activeWeapon.SetActiveWeapon(itemName);
             }
 
             // Marcamos el objeto como destruido en SpawnOnceManager
-            SpawnOncePoint spawnPoint = GetComponentInParent<SpawnOncePoint>();
-            if (spawnPoint != null)
+            if (TryGetComponent<SpawnOnceUpdate>(out var spawnOnceUpdate))
             {
-                SpawnOnceManager.Instance.MarkAsDestroyed(spawnPoint.id);
+                spawnOnceUpdate.UpdateState();
             }
 
             // Destruimos el objeto del mundo

@@ -49312,7 +49312,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: 446773774, guid: 4a154e9015af140d8807978b697abc2f, type: 3}
       - {fileID: 2022645951, guid: 4a154e9015af140d8807978b697abc2f, type: 3}
-      m_AnimationSpeed: 3.0000002
+      m_AnimationSpeed: 3
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 20, y: -12, z: 0}
@@ -49384,7 +49384,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: 259177378, guid: 4a154e9015af140d8807978b697abc2f, type: 3}
       - {fileID: 1803838039, guid: 4a154e9015af140d8807978b697abc2f, type: 3}
-      m_AnimationSpeed: 3
+      m_AnimationSpeed: 3.0000002
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 20, y: -11, z: 0}
@@ -49420,7 +49420,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: -1660336660, guid: 4a154e9015af140d8807978b697abc2f, type: 3}
       - {fileID: -1093050425, guid: 4a154e9015af140d8807978b697abc2f, type: 3}
-      m_AnimationSpeed: 3
+      m_AnimationSpeed: 3.0000002
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 13, y: -10, z: 0}
@@ -49483,7 +49483,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: 1096040264, guid: 4a154e9015af140d8807978b697abc2f, type: 3}
       - {fileID: 2035130481, guid: 4a154e9015af140d8807978b697abc2f, type: 3}
-      m_AnimationSpeed: 3.0000002
+      m_AnimationSpeed: 3
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -17, y: -9, z: 0}
@@ -49528,7 +49528,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: -623181648, guid: 4a154e9015af140d8807978b697abc2f, type: 3}
       - {fileID: -275135048, guid: 4a154e9015af140d8807978b697abc2f, type: 3}
-      m_AnimationSpeed: 3
+      m_AnimationSpeed: 3.0000002
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -17, y: -8, z: 0}
@@ -49627,7 +49627,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: 992801346, guid: 4a154e9015af140d8807978b697abc2f, type: 3}
       - {fileID: 1986720473, guid: 4a154e9015af140d8807978b697abc2f, type: 3}
-      m_AnimationSpeed: 3.0000002
+      m_AnimationSpeed: 3
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -20, y: -6, z: 0}
@@ -49735,7 +49735,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: 1287343496, guid: 4a154e9015af140d8807978b697abc2f, type: 3}
       - {fileID: -863247126, guid: 4a154e9015af140d8807978b697abc2f, type: 3}
-      m_AnimationSpeed: 3.0000002
+      m_AnimationSpeed: 3
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 15, y: -3, z: 0}
@@ -50742,71 +50742,6 @@ MonoBehaviour:
   weaponColliderRight: {fileID: 1223071886449128081}
   weaponColliderLeft: {fileID: 2153995346662612013}
   playerController: {fileID: 468611800}
---- !u!1001 &5195745339809438059
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2772432531309399511, guid: e9c67af95df9f46a9b2f6a910559fed0, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.03
-      objectReference: {fileID: 0}
-    - target: {fileID: 2772432531309399511, guid: e9c67af95df9f46a9b2f6a910559fed0, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 10.44
-      objectReference: {fileID: 0}
-    - target: {fileID: 2772432531309399511, guid: e9c67af95df9f46a9b2f6a910559fed0, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2772432531309399511, guid: e9c67af95df9f46a9b2f6a910559fed0, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2772432531309399511, guid: e9c67af95df9f46a9b2f6a910559fed0, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2772432531309399511, guid: e9c67af95df9f46a9b2f6a910559fed0, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2772432531309399511, guid: e9c67af95df9f46a9b2f6a910559fed0, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2772432531309399511, guid: e9c67af95df9f46a9b2f6a910559fed0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2772432531309399511, guid: e9c67af95df9f46a9b2f6a910559fed0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2772432531309399511, guid: e9c67af95df9f46a9b2f6a910559fed0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4107050979177172582, guid: e9c67af95df9f46a9b2f6a910559fed0, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8372676152640828798, guid: e9c67af95df9f46a9b2f6a910559fed0, type: 3}
-      propertyPath: m_Name
-      value: SwordItem
-      objectReference: {fileID: 0}
-    - target: {fileID: 8372676152640828798, guid: e9c67af95df9f46a9b2f6a910559fed0, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e9c67af95df9f46a9b2f6a910559fed0, type: 3}
 --- !u!1001 &6701168357742953126
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50969,5 +50904,4 @@ SceneRoots:
   - {fileID: 639034032}
   - {fileID: 2066835889}
   - {fileID: 1448093228}
-  - {fileID: 5195745339809438059}
   - {fileID: 1912282332}
