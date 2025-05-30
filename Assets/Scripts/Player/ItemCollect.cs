@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Animations;
 
 public class ItemCollect : MonoBehaviour
 {
@@ -24,6 +25,13 @@ public class ItemCollect : MonoBehaviour
             if (activeWeapon != null)
             {
                 activeWeapon.SetActiveWeapon(itemName);
+            }
+
+            // Marcamos el objeto como destruido en SpawnOnceManager
+            SpawnOncePoint spawnPoint = GetComponentInParent<SpawnOncePoint>();
+            if (spawnPoint != null)
+            {
+                SpawnOnceManager.Instance.MarkAsDestroyed(spawnPoint.id);
             }
 
             // Destruimos el objeto del mundo
