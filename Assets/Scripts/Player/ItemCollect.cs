@@ -3,6 +3,8 @@ using UnityEngine.Animations;
 
 public class ItemCollect : MonoBehaviour
 {
+    [TextArea(3, 10)]
+    [SerializeField] string msg;
     string itemName;
     Sprite itemImage;
     void Awake()
@@ -19,6 +21,10 @@ public class ItemCollect : MonoBehaviour
             InventoryManager.Instance.AddItem(itemName, itemImage);
 
             // Mostramos un mensaje de recogida
+            if (!string.IsNullOrEmpty(msg))
+            {
+                MessageManager.Instance.ShowMessage(msg);
+            }            
 
             // Activamos el arma en el jugador
             if (other.TryGetComponent<ActiveWeapon>(out var activeWeapon))

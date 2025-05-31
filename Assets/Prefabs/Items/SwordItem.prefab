@@ -115,6 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a32334184d1fc02aa3f500e318b74c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  msg: Wow! Acabas de recoger la legendaria "Tizona" del Cid
 --- !u!61 &7956794934586046185
 BoxCollider2D:
   m_ObjectHideFlags: 0
