@@ -8,10 +8,10 @@ public class InventoryManager : Singleton<InventoryManager>
     [SerializeField] GameObject inventoryUI;
     [SerializeField] GameObject[] slots;
 
-    List<String> itemNames = new();
+    List<String> items = new();
 
-    int currentSelectedSlot = 0;
-    int selectedItemIndex = 0;
+    int currentMarkedSlot = -1; // Currently marked SLOT in the inventory
+    int selectedItemIndex = -1; // Currently selected ITEM in the inventory
 
     PlayerControls _controls;
 
@@ -26,26 +26,24 @@ public class InventoryManager : Singleton<InventoryManager>
         _controls.Inventory.Close.performed += _ => CloseInventory();
         _controls.Inventory.Next.performed += _ => SelectNextSlot();
         _controls.Inventory.Prev.performed += _ => SelectPreviousSlot();
-
-        //SetSelectedSlot(selectedItemIndex);
     }
 
     void SelectNextSlot()
     {
-        if (itemNames.Count == 0) return; // No items to select
-        currentSelectedSlot = (currentSelectedSlot + 1) % itemNames.Count;
-        SetSelectedSlot(currentSelectedSlot);
+        if (items.Count == 0) return; // No items to select
+        currentMarkedSlot = (currentMarkedSlot + 1) % items.Count;
+        SetSelectedSlot(currentMarkedSlot);
     }
     void SelectPreviousSlot()
     {
-        if (itemNames.Count == 0) return; // No items to select
-        currentSelectedSlot = (currentSelectedSlot - 1 + itemNames.Count) % itemNames.Count;
-        SetSelectedSlot(currentSelectedSlot);
+        if (items.Count == 0) return; // No items to select
+        currentMarkedSlot = (currentMarkedSlot - 1 + items.Count) % items.Count;
+        SetSelectedSlot(currentMarkedSlot);
     }
 
     void SetSelectedSlot(int index)
     {
-        for (int i = 0; i < itemNames.Count; i++)
+        for (int i = 0; i < items.Count; i++)
         {
             // Activamos el box de selección
             GameObject activeImage = slots[i].transform.Find("Active").gameObject;
@@ -55,21 +53,13 @@ public class InventoryManager : Singleton<InventoryManager>
 
     void CloseInventory()
     {
-        /*
-        if (itemNames.Count > 0)
+        if (currentMarkedSlot != selectedItemIndex)
         {
-            SetSelectedSlot(selectedItemIndex); // Reset to the last selected slot
-        }
-        */
-
-        if (currentSelectedSlot != selectedItemIndex)
-        {
-            selectedItemIndex = currentSelectedSlot; // Update the selected item index
+            selectedItemIndex = currentMarkedSlot; // Update the selected item index
             ActiveWeapon activeWeapon = PlayerController.Instance.GetComponent<ActiveWeapon>();
             if (activeWeapon != null)
             {
-                string selectedItemName = itemNames[selectedItemIndex];
-                activeWeapon.SetActiveWeapon(selectedItemName); // Set the active weapon to the selected item
+                activeWeapon.SetActiveWeapon(items[selectedItemIndex]); // Set the active weapon to the selected item
             }
         }
 
@@ -79,23 +69,24 @@ public class InventoryManager : Singleton<InventoryManager>
     public void ShowInventory(bool visible)
     {
         inventoryUI.SetActive(visible);
-        currentSelectedSlot = selectedItemIndex;
-        SetSelectedSlot(selectedItemIndex);
+        if (selectedItemIndex > -1)
+        {
+            currentMarkedSlot = selectedItemIndex;
+            SetSelectedSlot(selectedItemIndex);
+        }
     }
     
-    public void AddItem(string itemName, Sprite itemImage)
+    public void AddItem(string itemID, Sprite itemImage)
     {
-        if (!itemNames.Contains(itemName))
+        if (!items.Contains(itemID))
         {
-            itemNames.Add(itemName);
-            int index = itemNames.Count - 1;
+            items.Add(itemID);
+            int index = items.Count - 1;
             if (index < slots.Length)
             {
                 GameObject slotImage = slots[index].transform.Find("ItemImage").gameObject;
                 slotImage.GetComponent<Image>().sprite = itemImage;
                 slotImage.SetActive(true);
-                selectedItemIndex = index; // Set the current selected slot to the newly added item
-                SetSelectedSlot(index);
             }
             else
             {

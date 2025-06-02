@@ -10,12 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 2772432531309399511}
   - component: {fileID: 4135307435124995044}
-  - component: {fileID: 112547197577574041}
-  - component: {fileID: 3725440720521455593}
+  - component: {fileID: 1031922558023022434}
   - component: {fileID: 7956794934586046185}
   m_Layer: 8
-  m_Name: AxeItem
-  m_TagString: Axe
+  m_Name: SwordSpawnItem
+  m_TagString: Sword
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -80,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -209041454, guid: 88a50575d0274e33fb7f353342bea5ca, type: 3}
+  m_Sprite: {fileID: -1196971435, guid: 88a50575d0274e33fb7f353342bea5ca, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -91,7 +90,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &112547197577574041
+--- !u!114 &1031922558023022434
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -100,22 +99,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8372676152640828798}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa269cd1c582562dcb5722d7eeec6686, type: 3}
+  m_Script: {fileID: 11500000, guid: 256933d2dbc5ace7e9fda31e05a8048c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3725440720521455593
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8372676152640828798}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a32334184d1fc02aa3f500e318b74c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  msg: "Vaya! Si es la famosa \"Dardo\" del mism\xEDsimo Gimli"
 --- !u!61 &7956794934586046185
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -170,10 +156,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2772432531309399511}
     m_Modifications:
-    - target: {fileID: 3384855811492320253, guid: b92a48e14c0ed3b919ea2358869f6a0d, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 7e736894525dafc828969f69757414c3, type: 2}
     - target: {fileID: 3471999528752434267, guid: b92a48e14c0ed3b919ea2358869f6a0d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

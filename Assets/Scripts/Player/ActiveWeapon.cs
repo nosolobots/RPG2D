@@ -10,17 +10,28 @@ public class ActiveWeapon : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
+    public bool hasWeapon(string weaponName)
+    {
+        return transform.Find(weaponName) != null;
+    }
+
     public void SetActiveWeapon(string weaponName)
     {
         if (currentWeapon != null)
         {
             currentWeapon.SetActive(false);
-            anim.SetBool(currentWeapon.name.ToLower(), false);
+
+            // Desactivamos el bool del arma anterior en el animator
+            anim.SetBool(
+                ((SpawnOnceWeaponSO)ResourcesManager.Instance.GetResource(currentWeapon.name))?.animatorFlag,
+                false);
         }
 
-        GameObject weapon = transform.Find("Weapons/" + weaponName)?.gameObject;
-        currentWeapon = weapon;
+        // Activamos el nuevo arma
+        currentWeapon = transform.Find(weaponName)?.gameObject;
         currentWeapon.SetActive(true);
-        anim.SetBool(weaponName.ToLower(), true);
+        anim.SetBool(
+            ((SpawnOnceWeaponSO)ResourcesManager.Instance.GetResource(currentWeapon.name))?.animatorFlag,
+            true);
     }
 }

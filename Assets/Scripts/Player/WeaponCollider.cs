@@ -4,7 +4,12 @@ public class WeaponCollider : MonoBehaviour
 {
     [SerializeField] PolygonCollider2D weaponColliderRight;
     [SerializeField] PolygonCollider2D weaponColliderLeft;
-    [SerializeField] PlayerController playerController;
+    PlayerController playerController;
+
+    void Start()
+    {
+        playerController = PlayerController.Instance;
+    }
 
     void Update()
     {

@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a42c6fed02f516109a1d37a1679ae253, type: 3}
+  m_Name: Tizona
+  m_EditorClassIdentifier: 
+  itemID: main_sword_1
+  sceneID: 0
+  itemType: 0
+  state: 1
+  spawnPosition: {x: 0, y: 10, z: 0}
+  itemPrefab: {fileID: 8372676152640828798, guid: 15993dccc043269518d8a58607659b81, type: 3}
+  message: Ohh! Acabas de recoger la legendaria "Tizona" del Cid.
+  damage: 1
+  pushForce: 4
+  weaponSprite: {fileID: -1196971435, guid: 88a50575d0274e33fb7f353342bea5ca, type: 3}
+  weaponName: Tizona
+  weaponPrefab: {fileID: 2980775954737337907, guid: f93d5445b617e481895b775cfb16e410, type: 3}
+  animatorFlag: sword
