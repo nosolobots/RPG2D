@@ -14,4 +14,9 @@ public class SpawnOnceWeaponSO : SpawnOnceSO
     public string weaponName; // Name of the weapon
     public GameObject weaponPrefab; // Prefab of the weapon to spawn in the player's inventory
     public string animatorFlag; // Animation flag for the weapon
+
+    private void OnValidate()
+    {
+        this.itemType = SpawnOnceType.Weapon; // Ensure the item type is set to Weapon
+    }
 }

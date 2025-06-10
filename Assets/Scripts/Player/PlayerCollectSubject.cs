@@ -1,7 +1,8 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerCollect : MonoBehaviour
+public class PlayerCollectSubject : Singleton<PlayerCollectSubject>
 {
     List<IPlayerCollectObserver> observers = new List<IPlayerCollectObserver>();
     public void AddObserver(IPlayerCollectObserver observer)

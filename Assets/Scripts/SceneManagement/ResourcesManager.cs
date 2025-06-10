@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ResourcesManager : Singleton<ResourcesManager>
+public class ResourcesManager : Singleton<ResourcesManager>, IPlayerCollectObserver
 {
     // Diccionario para almacenar los recursos SpawnOnceSO
     // Clave: itemID, Valor: SpawnOnceSO
@@ -13,6 +13,12 @@ public class ResourcesManager : Singleton<ResourcesManager>
 
         // Cargamos los recursos al iniciar el juego
         LoadResources();
+    }
+
+    void Start()
+    {
+        // Nos registramos como observador del PlayerCollectSubject
+        PlayerCollectSubject.Instance.AddObserver(this);
     }
 
     void LoadResources()
@@ -58,5 +64,10 @@ public class ResourcesManager : Singleton<ResourcesManager>
             }
         }
         return sceneResources;
+    }
+
+    public void OnNotify(string itemID)
+    {
+        GetResource(itemID).state = SpawnOnceSO.SpawnOnceState.Collected;
     }
 }

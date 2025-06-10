@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InventoryManager : Singleton<InventoryManager>
+public class InventoryManager : Singleton<InventoryManager>, IPlayerCollectObserver
 {
     [SerializeField] GameObject inventoryUI;
     [SerializeField] GameObject[] slots;
@@ -26,6 +26,9 @@ public class InventoryManager : Singleton<InventoryManager>
         _controls.Inventory.Close.performed += _ => CloseInventory();
         _controls.Inventory.Next.performed += _ => SelectNextSlot();
         _controls.Inventory.Prev.performed += _ => SelectPreviousSlot();
+
+        // Nos registramos como observador del PlayerCollectSubject
+        PlayerCollectSubject.Instance.AddObserver(this);      
     }
 
     void SelectNextSlot()
@@ -93,5 +96,23 @@ public class InventoryManager : Singleton<InventoryManager>
                 Debug.LogWarning("Not enough slots in the inventory UI.");
             }
         }
+    }
+
+    public void OnNotify(string itemID)
+    {
+        // Obtenemos el SpawnOnceWeaponSO asociado al objeto
+        SpawnOnceSO data = ResourcesManager.Instance.GetResource(itemID) as SpawnOnceSO;
+        if (data == null)
+        {
+            Debug.LogError($"No se encontró SpawnOnceWeaponSO para el item {itemID}");
+            return;
+        }
+
+        // Si es un arma, la añadimos al inventario del jugador
+        if (data.itemType == SpawnOnceSO.SpawnOnceType.Weapon)
+        {
+            SpawnOnceWeaponSO weaponData = data as SpawnOnceWeaponSO;
+            AddItem(weaponData.itemID, weaponData.weaponSprite);
+        }        
     }
 }

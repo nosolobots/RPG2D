@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2772432531309399511}
   - component: {fileID: 4135307435124995044}
-  - component: {fileID: 1031922558023022434}
   - component: {fileID: 7956794934586046185}
+  - component: {fileID: 5245192456135877781}
   m_Layer: 8
   m_Name: SwordSpawnItem
   m_TagString: Sword
@@ -90,18 +90,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1031922558023022434
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8372676152640828798}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 256933d2dbc5ace7e9fda31e05a8048c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &7956794934586046185
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -148,6 +136,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.755262, y: 0.74316883}
   m_EdgeRadius: 0
+--- !u!114 &5245192456135877781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8372676152640828798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d22b36b4f83678d3a96e66ac238858e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8180519004300733233
 PrefabInstance:
   m_ObjectHideFlags: 0
