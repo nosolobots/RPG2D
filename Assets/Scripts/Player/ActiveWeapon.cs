@@ -16,6 +16,11 @@ public class ActiveWeapon : MonoBehaviour, IPlayerCollectObserver
         PlayerCollectSubject.Instance.AddObserver(this);
     }
 
+    public GameObject GetCurrentWeapon()
+    {
+        return currentWeapon;
+    }
+
     public bool hasWeapon(string weaponName)
     {
         return transform.Find(weaponName) != null;
@@ -39,6 +44,24 @@ public class ActiveWeapon : MonoBehaviour, IPlayerCollectObserver
         anim.SetBool(
             ((SpawnOnceWeaponSO)ResourcesManager.Instance.GetResource(currentWeapon.name))?.animatorFlag,
             true);
+    }
+
+    public void FireWeapon()
+    {
+        if (currentWeapon == null)
+        {
+            return;
+        }
+
+        SpawnOnceWeaponSO weaponData = ResourcesManager.Instance.GetResource(currentWeapon.name) as SpawnOnceWeaponSO;
+        if (weaponData == null || !weaponData.firingWeapon)
+        {
+            return;
+        }
+
+        // Aquí se implementaría la lógica de disparo del arma
+        // Por ejemplo, instanciar un proyectil o aplicar daño a un enemigo
+        Debug.Log($"Disparando el arma: {weaponData.weaponName}");
     }
 
     public void OnNotify(string itemID)
@@ -69,10 +92,16 @@ public class ActiveWeapon : MonoBehaviour, IPlayerCollectObserver
 
             // Parametrizamos el arma 
             weapon.name = weaponData.itemID; // Asignamos el nombre del arma
-            weapon.GetComponent<DamageSource>().SetWeaponData(
-                weaponData.damage,
-                weaponData.pushForce
-            );
+
+            // Establecemos el daño del arma
+            DamageSource damageSource = (weaponData.firingWeapon) ?
+                weaponData.projectilePrefab.GetComponent<DamageSource>() :
+                weapon.GetComponent<DamageSource>();
+
+            if (damageSource != null)
+            {
+                damageSource.SetWeaponData(weaponData.damage, weaponData.pushForce);
+            }
         }
     }
 }

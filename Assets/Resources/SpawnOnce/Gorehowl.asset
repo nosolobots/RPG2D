@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a42c6fed02f516109a1d37a1679ae253, type: 3}
-  m_Name: Dardo
+  m_Name: Gorehowl
   m_EditorClassIdentifier: 
   itemID: cave_axe_1
   sceneID: 1
@@ -18,10 +18,10 @@ MonoBehaviour:
   state: 1
   spawnPosition: {x: 12, y: 0, z: 0}
   itemPrefab: {fileID: 8372676152640828798, guid: 1330d65edc0ca06108b4679e47582af2, type: 3}
-  message: "Vaya! Si es la famosa \"Dardo\" del mism\xEDsimo Gimli."
+  message: "Vaya! Si es la famosa \"Gorehowl\" de Grommash, Coraz\xF3n de Gigante"
   damage: 3
   pushForce: 10
   weaponSprite: {fileID: -209041454, guid: 88a50575d0274e33fb7f353342bea5ca, type: 3}
-  weaponName: Dardo
+  weaponName: Gorehowl
   weaponPrefab: {fileID: 1233559607514038116, guid: 87a0ff24126ec77d3a48dd04becdd9dc, type: 3}
   animatorFlag: axe

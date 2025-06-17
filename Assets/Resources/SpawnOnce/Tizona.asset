@@ -18,7 +18,7 @@ MonoBehaviour:
   state: 1
   spawnPosition: {x: 0, y: 10, z: 0}
   itemPrefab: {fileID: 8372676152640828798, guid: 15993dccc043269518d8a58607659b81, type: 3}
-  message: Ohh! Acabas de recoger la legendaria "Tizona" del Cid.
+  message: Ohh! Acabas de recoger la legendaria "Tizona" del Cid Campeador
   damage: 1
   pushForce: 4
   weaponSprite: {fileID: -1196971435, guid: 88a50575d0274e33fb7f353342bea5ca, type: 3}

@@ -25,8 +25,10 @@ public class PlayerController : Singleton<PlayerController>
     PlayerControls _controls;
     Vector2 _movement;
     float _speed;
+    
+    ActiveWeapon _activeWeapon;
 
-    public bool IsLookingRight {get; private set;} = true;
+    public bool IsLookingRight { get; private set; } = true;
     public bool IsAttacking {get; private set;} = false;
 
     protected override void Awake()
@@ -49,6 +51,7 @@ public class PlayerController : Singleton<PlayerController>
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
+        _activeWeapon = GetComponent<ActiveWeapon>();
     }
 
     void Update()
@@ -78,6 +81,8 @@ public class PlayerController : Singleton<PlayerController>
     void Attack()
     {
         anim.SetTrigger("attack");
+
+        _activeWeapon.FireWeapon();
     }
 
     void OnAttackStart()
